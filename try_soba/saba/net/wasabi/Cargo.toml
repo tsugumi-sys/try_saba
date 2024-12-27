@@ -1,0 +1,9 @@
+[package]
+authors = ["d0iasm"]
+name = "net_wasabi"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+saba_core = { path = "../../core" }
+noli = { git = "https://github.com/hikalium/wasabi.git", branch = "for_saba" }
