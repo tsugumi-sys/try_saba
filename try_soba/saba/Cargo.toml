@@ -2,16 +2,11 @@
 name = "saba"
 version = "0.1.0"
 edition = "2021"
-
-[workspace]
-members = [ "core", "net/wasabi" ]
-# members = [ "core", "net/wasabi", "ui/wasabi" ]
-
+default-run = "saba"
 
 [features]
 default = ["wasabi"]
-wasabi = ["dep:net_wasabi"]
-# wasabi = ["dep:net_wasabi", "dep:ui_wasabi", "dep:noli"]
+wasabi = ["dep:net_wasabi", "dep:ui_wasabi", "dep:noli"]
 
 [[bin]]
 name = "saba"
@@ -21,4 +16,5 @@ required-features = ["wasabi"]
 [dependencies]
 saba_core = { path = "./core" }
 net_wasabi = { path = "./net/wasabi", optional = true }
-noli = { git = "https://github.com/hikalium/wasabi.git", branch = "for_saba" }
+ui_wasabi = { path = "./ui/wasabi", optional = true }
+noli = { git = "https://github.com/hikalium/wasabi.git", branch = "for_saba", optional = true }
